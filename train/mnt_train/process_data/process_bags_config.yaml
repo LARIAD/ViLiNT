@@ -1,0 +1,69 @@
+scand:
+  odomtopics: ["/odom", "/jackal_velocity_controller/odom"]
+  imtopics: ["/image_raw/compressed", "/camera/rgb/image_raw/compressed"]
+  ang_offset: 0.0
+  img_process_func: "process_scand_img"
+  odom_process_func: "nav_to_xy_yaw"
+
+rellis3D_vel:
+  odomtopics: "/odometry/filtered"
+  imtopics: "/pylon_camera_node/image_raw"
+  lidartopics: "/velodyne_points"
+  ang_offset: 0.0
+  img_process_func: "process_rellis3D_img"
+  lidar_process_func: "process_rellis3D_lidar"
+  odom_process_func: "nav_to_xy_yaw"
+
+rellis3D_os1:
+  odomtopics: "/odometry/filtered"
+  imtopics: "/pylon_camera_node/image_raw"
+  lidartopics: "/os1_cloud_node/points"
+  ang_offset: 0.0
+  img_process_func: "process_rellis3D_img"
+  lidar_process_func: "process_rellis3D_lidar"
+  odom_process_func: "nav_to_xy_yaw"
+
+husky:
+  odomtopics: "/odometry/filtered"
+  imtopics: "/zed_node/left_raw/image_raw_color"
+  lidartopics: "/rslidar_points"
+  ang_offset: 0.0
+  img_process_func: "process_husky_img"
+  lidar_process_func: "pc2_to_numpy"
+  odom_process_func: "nav_to_xy_yaw"
+
+husky_dlio:
+  odomtopics: "/dlio/odom_node/odom"
+  imtopics: "/zed/zed_node/rgb/color/rect/image"
+  lidartopics: "/ouster/points"
+  ang_offset: 0.0
+  img_process_func: "process_husky_img"
+  lidar_process_func: "pc2_to_numpy_rot"
+  odom_process_func: "nav_to_xy_yaw"
+
+tartan_drive2:
+  odomtopics: "/odometry/filtered_odom"
+  imtopics: "/multisense/left/image_rect_color"
+  lidartopics: "/velodyne_1/velodyne_points"
+  ang_offset: 0.0
+  img_process_func: "process_tartan_img"
+  lidar_process_func: "process_rellis3D_lidar"
+  odom_process_func: "nav_to_xy_yaw"
+
+isaacsim:
+  odomtopics: "/odom"
+  imtopics: "/rgb"
+  lidartopics: "/point_cloud"
+  ang_offset: 0.0
+  img_process_func: "process_husky_img"
+  lidar_process_func: "pc2_to_numpy"
+  odom_process_func: "nav_to_xy_yaw"
+
+huron:
+  odomtopics: "/odometry"
+  imtopics: "/fisheye_image/compressed"
+  lidartopics: "/laserscan"
+  ang_offset: 0.0
+  img_process_func: "process_sacson_img"
+  lidar_process_func: "laserscan_to_numpy"
+  odom_process_func: "nav_to_xy_yaw"

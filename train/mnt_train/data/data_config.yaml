@@ -1,0 +1,264 @@
+
+# global params for diffusion model
+# normalized min and max
+action_stats:
+  min: [-2.5, -4] # [min_dx, min_dy]
+  max: [5, 4] # [max_dx, max_dy]
+
+# data specific params
+recon:
+  metric_waypoint_spacing: 0.25 # average spacing between waypoints (meters)
+
+  # OPTIONAL (FOR VISUALIZATION ONLY)
+  camera_metrics: # https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html
+    camera_height: 0.95 # meters
+    camera_x_offset: 0.45 # distance between the center of the robot and the forward facing camera
+    camera_matrix:
+      fx: 272.547000
+      fy: 266.358000
+      cx: 320.000000
+      cy: 220.000000
+    dist_coeffs:
+      k1: -0.038483
+      k2: -0.010456
+      p1: 0.003930
+      p2: -0.001007
+      k3: 0.0
+  robot: # Jackal
+    lidar_height: 0.0
+    v_max: 2.0
+    w_max: 2.0
+    al_max: 3.0
+    ar_max: 6.0
+    height: 0.25
+    width: 0.43
+    length: 0.508
+    ground_clearance: 0.045
+    weight: 17.0
+    max_speed: 3.5423 # m/s
+    max_yaw_rate: 25.769  # deg/s
+    max_acceleration: 3.835
+    min_turn_radius: 0.0
+    median_turn_radius: 54.547 # deg
+    lidar_transform:
+      rotation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      translation:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+
+scand:
+  metric_waypoint_spacing: 0.35
+  robot: # Jackal
+    lidar_height: 0.0
+    v_max: 2.0
+    w_max: 2.0
+    al_max: 3.0
+    ar_max: 6.0
+    height: 0.25
+    width: 0.43
+    length: 0.508
+    ground_clearance: 0.045
+    weight: 17.0
+    max_speed: 3.5423 # m/s
+    max_yaw_rate: 25.769  # deg/s
+    max_acceleration: 3.835
+    min_turn_radius: 0.0
+    median_turn_radius: 54.547 # deg
+    lidar_transform:
+      rotation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      translation:
+        x: 0.0
+        y: 0.0
+        z: 0.86
+
+rellis3D:
+  metric_waypoint_spacing: 0.25
+  robot: 
+    lidar_height: 0.4
+    height: 1.0
+    width: 1.0
+    length: 2.0
+    ground_clearance: 0.5
+    max_speed: 2.493 # m/s
+    max_yaw_rate: 0.9121 # deg/s
+    max_acceleration: 3.1937
+    min_turn_radius: 0.0067
+    median_turn_radius: 45.839 # deg
+    lidar_transform:
+      rotation:
+        w: 0.9998380869287912
+        x: 0.004316622227296997
+        y: 0.01471729869351073
+        z: -0.009411047672173736
+      translation:
+        x: 0.42365594929782135
+        y: -0.0030099257251302793
+        z: 0.7565525217769906
+
+tartan_drive2:
+  metric_waypoint_spacing: 1.11
+  robot:
+    lidar_height: 0.0
+    v_max: 6.0
+    w_max: 2.0
+    al_max: 5.5
+    ar_max: 6.0
+    height: 1.925
+    width: 1.57
+    length: 3.1
+    ground_clearance: 0.3
+    weight: 613.0
+    max_speed: 19.585 # m/s
+    max_yaw_rate: 25.594 # deg/s
+    max_acceleration: 26.975
+    min_turn_radius: 0.0
+    median_turn_radius: 79.935 # deg
+    lidar_transform:
+      rotation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      translation:
+        x: 0.0
+        y: 0.0
+        z: 0.0
+
+husky:
+  metric_waypoint_spacing: 0.06
+  robot:
+    lidar_height: -0.5
+    v_max: 1.0
+    w_max: 2.0
+    al_max: 3.0
+    ar_max: 6.0
+    height: 0.39
+    width: 0.67
+    length: 0.99
+    ground_clearance: 0.13
+    weight: 50.0
+    max_speed: 3.317 # m/s
+    max_yaw_rate: 0.079 # deg/s
+    max_acceleration: 3.1141
+    min_turn_radius: 0.0
+    median_turn_radius: 54.528 # deg
+    lidar_transform:
+      rotation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      translation:
+        x: 0.0
+        y: 0.0
+        z: 0.35
+
+isaacsim:
+  metric_waypoint_spacing: 0.06
+  robot:
+    lidar_height: 0.4
+    v_max: 1.0
+    w_max: 2.0
+    al_max: 3.0
+    ar_max: 6.0
+    height: 0.39
+    width: 0.67
+    length: 0.99
+    ground_clearance: 0.13
+    weight: 50.0
+    max_speed: 0.5280 # m/s
+    max_yaw_rate: 0.612 # deg/s
+    max_acceleration: 0.5888
+    min_turn_radius: 0.0346
+    median_turn_radius: 2.028 # deg
+    lidar_transform:
+      rotation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      translation:
+        x: 0.0
+        y: 0.0
+        z: 0.56
+  camera_metrics:
+    camera_height:  # meters
+    camera_x_offset:  # distance between the center of the robot and the forward facing camera
+    camera_matrix:
+      fx: 731.78788
+      fy: 731.78788
+      cx: 970.94244
+      cy: 600.37482
+    dist_coeffs:
+      k1: 0.00245
+      k2: 0.0
+      p1: -0.00037
+      p2: -0.00074
+      k3: 0.0
+
+grand-tour:
+  metric_waypoint_spacing: 0.25
+  robot: # Jackal-Like
+    lidar_height: 0.0
+    v_max: 2.0
+    w_max: 2.0
+    al_max: 3.0
+    ar_max: 6.0
+    height: 0.25
+    width: 0.6
+    length: 0.93
+    ground_clearance: 0.045
+    weight: 17.0
+    max_speed: 3.5423 # m/s
+    max_yaw_rate: 25.769  # deg/s
+    max_acceleration: 3.835
+    min_turn_radius: 0.0
+    median_turn_radius: 54.547 # deg
+    lidar_transform:
+      rotation:
+        w: 9.99974581e-01
+        x: 9.22873702e-04
+        y: 1.56238073e-03
+        z: 6.89527541e-03
+      translation:
+        x: -0.37903545
+        y: -0.0848696
+        z: 0.17043049
+
+huron:
+  metric_waypoint_spacing: 0.25
+  robot: # Roomba 891
+    lidar_height: 0.08
+    v_max: 0.5
+    w_max: 4.25
+    al_max: 0.5
+    ar_max: 4.0
+    height: 0.092
+    width: 0.353
+    length: 0.353
+    ground_clearance: 0.02
+    weight: 3.8
+    max_speed: 0.5 # m/s
+    max_yaw_rate: 240.0  # deg/s
+    max_acceleration: 0.5
+    min_turn_radius: 0.0
+    median_turn_radius: 50.0 # deg
+    lidar_transform:
+      rotation:
+        w: 1.0
+        x: 0.0
+        y: 0.0
+        z: 0.0
+      translation:
+        x: 0.0
+        y: 0.0
+        z: 0.09

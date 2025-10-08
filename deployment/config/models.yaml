@@ -1,0 +1,8 @@
+vilint:
+  config_path: "train/config/vilint.yaml"
+  ckpt_path: "deployment/model_weights/vilint.pth"
+  use_exploration: True
+  use_distance_to_goal_heuristic: True
+  use_collision_heuristic: True
+  mask_lidar : False
+  mask_image : True

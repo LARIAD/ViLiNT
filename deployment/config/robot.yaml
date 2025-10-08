@@ -1,0 +1,24 @@
+# linear and angular speed limits for the robot
+max_v: 0.4 #0.4 # m/s
+max_w: 0.8 #0.8 # rad/s
+# observation rate fo the robot
+frame_rate: 4 # Hz
+graph_rate: 0.3333 # Hz  
+
+# topic names (modify for different robots/nodes)
+vel_teleop_topic: /joy_teleop/cmd_vel 
+# vel_navi_topic: /husky_velocity_controller/cmd_vel
+vel_navi_topic: /cmd_vel
+vel_recovery_topic: /cmd_vel_mux/input/recovery
+
+robot:
+  lidar_height: 0.36
+  v_max: 1.0
+  w_max: 2.0
+  al_max: 3.0
+  ar_max: 6.0
+  height: 0.39
+  width: 0.67
+  length: 0.99
+  ground_clearance: 0.13
+  weight: 50.0

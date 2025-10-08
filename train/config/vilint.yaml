@@ -1,0 +1,155 @@
+project_name: vilint
+run_name: vilint
+
+# load_run: vilint/vilint_2025_06_05_16_18_48
+
+# training setup
+use_tb: True
+train: True
+batch_size: 256
+eval_batch_size: 128
+epochs: 20
+gpu_ids: [0, 1, 2, 3]
+num_workers: 12
+lr: 1e-4
+optimizer: adamw
+clipping: False
+max_norm: 1.
+scheduler: "cosine"
+warmup: True 
+warmup_epochs: 4
+cyclic_period: 10
+plateau_patience: 3
+plateau_factor: 0.5
+seed: 0
+
+# model params
+model_type: vilint
+vision_encoder: vilint
+encoding_size: 512
+im_encoder: dune
+pc_encoder: pointtransformerv3
+attn_unet: False
+cond_predict_scale: False
+mha_num_attention_heads: 4
+mha_num_attention_layers: 4
+mha_ff_dim_factor: 4
+down_dims: [64, 128, 256]
+
+# diffusion model params
+num_diffusion_iters: 10
+
+# mask 
+goal_mask_prob: 0.5
+
+# normalization for the action space
+normalize: False
+
+# context
+context_type: temporal
+context_size: 3 # 5
+context_size_li: 0
+alpha: 1e-4
+
+# Physical encoding
+use_physics_encoding: True
+physics_dim: 3
+
+# Collision pred
+use_length_cond: False
+
+# Freeze point cloud encoder
+freeze_pc_encoder: True
+pc_encoder_channels: 4
+
+# IMLE action prediction
+use_imle: False
+
+# distance bounds for distance and action and distance predictions 
+distance_type: euclidean # metric or temporal
+distance:
+  min_dist_cat: 0
+  max_dist_cat: 20
+action:
+  min_dist_cat: 1
+  max_dist_cat: 50
+
+# action output params
+len_traj_pred: 8
+learn_angle: True
+
+# dataset specific parameters
+image_size: [336, 336] # width, height
+datasets:
+  husky:
+    data_folder: ~/datasets/husky/datas
+    end_slack: 0
+    goals_per_obs: 1
+    negative_mining: False
+    test: ~/datasets/husky/splits/test/
+    train: ~/datasets/husky/splits/train/
+    waypoint_spacing: 10
+    lidar: True
+  isaacsim:
+    data_folder: ~/datasets/isaacsim/datas
+    end_slack: 0
+    goals_per_obs: 1
+    negative_mining: False
+    test: ~/datasets/isaacsim/splits/test/
+    train: ~/datasets/isaacsim/splits/train/
+    waypoint_spacing: 10
+    lidar: True
+  rellis3D:
+    data_folder: ~/datasets/Rellis-3D/datas_vel
+    end_slack: 0
+    goals_per_obs: 1
+    negative_mining: False
+    test: ~/datasets/Rellis-3D/splits/test/
+    train: ~/datasets/Rellis-3D/splits/train/
+    waypoint_spacing: 1
+    lidar: True
+  scand:
+    data_folder: ~/datasets/scand/datas
+    end_slack: 0
+    goals_per_obs: 1
+    negative_mining: False
+    test: ~/datasets/scand/splits/test/
+    train: ~/datasets/scand/splits/train/
+    waypoint_spacing: 1
+    lidar: True
+  tartan_drive2:
+    data_folder: ~/datasets/tartandrive2/datas
+    end_slack: 0
+    goals_per_obs: 1
+    negative_mining: False
+    test: ~/datasets/tartandrive2/splits/test/
+    train: ~/datasets/tartandrive2/splits/train/
+    waypoint_spacing: 1
+    lidar: True
+  grand-tour:
+    data_folder: ~/datasets/grand-tour/datas
+    end_slack: 0
+    goals_per_obs: 1
+    negative_mining: False
+    test: ~/grand-tour/splits/test/
+    train: ~/datasets/grand-tour/splits/train/
+    waypoint_spacing: 1
+    lidar: True
+  huron:
+    data_folder: ~/datasets/huron/datas
+    end_slack: 0
+    goals_per_obs: 1
+    negative_mining: False
+    test: ~/datasets/huron/splits/test/
+    train: ~/datasets/huron/splits/train/
+    waypoint_spacing: 1
+    lidar: False
+
+# logging stuff
+## =0 turns off
+print_log_freq: 100 # in iterations
+image_log_freq: 1000 #0 # in iterations
+num_images_log: 8 #0 
+pairwise_test_freq: 0 # in epochs
+eval_fraction: 0.25
+eval_freq: 1 # in epochs

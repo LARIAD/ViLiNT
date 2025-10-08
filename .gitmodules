@@ -1,0 +1,9 @@
+[submodule "PointTransformerV3"]
+	path = PointTransformerV3
+	url = https://github.com/Pointcept/PointTransformerV3.git
+[submodule "dune"]
+	path = dune
+	url = https://github.com/naver/dune.git
+[submodule "diffusion"]
+	path = diffusion
+	url = https://github.com/real-stanford/diffusion_policy.git

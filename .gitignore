@@ -1,0 +1,15 @@
+logs/
+tensorboard/
+*.pyc
+dependency_links.txt
+__pycache__/
+*.pkl
+SOURCES.txt
+*.egg-info/
+*.egg
+top_level.txt
+*.so
+*.dylib
+*.pth
+*.err
+*.out
