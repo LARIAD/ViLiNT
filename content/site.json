@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "description": "Multimodal Navigation Transformer research project page.",
+    "keywords": "robot navigation, transformer, multimodal learning, lidar, vision"
+  },
+  "nav": {
+    "brand": "MNT Project",
+    "homeUrl": "#top"
+  },
+  "project": {
+    "title": "Multimodal Embodiment-aware Navigation Transformer",
+    "subtitle": "Learning short-horizon waypoint trajectories from multimodal observations.",
+    "institution": "Add lab, department, or university here"
+  },
+  "authors": [
+    {
+      "name": "Louis Dezons",
+      "affiliations": ["1", "2"],
+      "url": "#"
+    },
+    {
+      "name": "Quentin Picard",
+      "affiliations": ["1"],
+      "url": "#"
+    },
+    {
+      "name": "Rémi Marsal",
+      "affiliations": ["2"],
+      "url": "#"
+    },
+    {
+      "name": "François Goulette",
+      "affiliations": ["2"],
+      "url": "#"
+    },
+    {
+      "name": "David Filliat",
+      "affiliations": ["1"],
+      "url": "#"
+    }
+
+  ],
+  "affiliations": [
+    {
+      "id": "1",
+      "name": "AMIAD, Pôle Recherche, France"
+    },
+    {
+      "id": "2",
+      "name": "U2IS, ENSTA, Institut Polytechnique de Paris, Palaiseau, France"
+    }
+  ],
+  "links": [
+    {
+      "label": "arXiv",
+      "url": "#"
+    },
+    {
+      "label": "Code",
+      "url": "#"
+    }
+  ],
+  "abstract": [
+    "Goal-conditioned navigation models for ground robots trained using supervised learning show promising zero-shot transfer, but their collision-avoidance capability nevertheless degrades under distribution shift, i.e. environmental, robot or sensor configuration changes.",
+    "We propose ViLiNT, a multimodal, attention-based policy for goal navigation, trained on heterogeneous data from multiple platforms and environments, which improves robustness with two key features.",
+    "First, we fuse RGB images, 3D LiDAR point clouds, a goal embedding and a robot's embodiment descriptor with a transformer architecture to capture complementary geometry and appearance cues. The transformer's output is used to condition a diffusion model that generates navigable trajectories.",
+    "Second, using automatically generated offline labels, we train a path clearance prediction head for scoring and ranking trajectories produced by the diffusion model. The diffusion conditioning as well as the trajectory ranking head depend on a robot's embodiment token that allows our model to generate and select trajectories with respect to the robot's dimensions.",
+    "Across three simulated environments, ViLiNT improves Success Rate on average by 166% over equivalent state-of-the-art vision-only baseline (NoMaD). This increase in performance is confirmed through real-world deployments of a rover navigating in obstacle fields. These results highlight that combining multimodal fusion with our collision prediction mechanism leads to improved off-road navigation robustness."
+  ],
+  "navigationTransformer": [
+    "ViLiNT is a navigation transformer that fuses RGB image history, 3D LiDAR point clouds, a goal embedding, and a robot embodiment descriptor within a shared attention backbone, so the policy can reason jointly about appearance, geometry, intent, and platform-specific constraints.",
+    "The transformer output conditions a diffusion model that proposes short-horizon waypoint trajectories, while a learned clearance prediction head ranks those candidates with respect to the robot body. This multimodal, embodiment-aware design is what allows the system to produce safer and more transferable navigation behavior under shifts in environment, robot morphology, and sensor configuration."
+  ],
+  "video": {
+    "embedUrl": "",
+    "file": "",
+    "image": "static/images/front_page_expes.png",
+    "poster": "",
+    "caption": ""
+  },
+  "gallery": [
+    {
+      "type": "video",
+      "src": "static/videos/trees.m4v"
+    },
+    {
+      "type": "video",
+      "src": "static/videos/chairs.m4v"
+    },
+    {
+      "type": "video",
+      "src": "static/videos/pallets.m4v"
+    },
+    {
+      "type": "video",
+      "src": "static/videos/pole.m4v"
+    }
+  ],
+  "citation": {
+    "bibtex": "@article{multimodal_navigation_transformer_2026,\n  title={Multimodal Navigation Transformer},\n  author={First Author and Second Author and Third Author},\n  journal={arXiv preprint arXiv:0000.00000},\n  year={2026}\n}"
+  },
+  "footerNote": "This webpage template is inspired by Nerfies-style academic project pages."
+}
