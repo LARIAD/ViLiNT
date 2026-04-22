@@ -53,7 +53,7 @@
   "links": [
     {
       "label": "arXiv",
-      "url": "#"
+      "url": "https://arxiv.org/abs/2604.19267"
     },
     {
       "label": "Code",
@@ -97,7 +97,7 @@
     }
   ],
   "citation": {
-    "bibtex": "@article{multimodal_navigation_transformer_2026,\n  title={Multimodal Navigation Transformer},\n  author={First Author and Second Author and Third Author},\n  journal={arXiv preprint arXiv:0000.00000},\n  year={2026}\n}"
+    "bibtex": "@misc{dezons2026multimodalembodimentawarenavigationtransformer,\n title={Multimodal embodiment-aware navigation transformer},\n author={Louis Dezons and Quentin Picard and Rémi Marsal and François Goulette and David Filliat},\n year={2026},\n eprint={2604.19267},\n archivePrefix={arXiv},\n primaryClass={cs.RO},\n url={https://arxiv.org/abs/2604.19267},}"
   },
   "footerNote": "This webpage template is inspired by Nerfies-style academic project pages."
 }
